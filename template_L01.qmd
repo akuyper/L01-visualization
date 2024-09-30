@@ -2,16 +2,23 @@
 title: "L01 Visualization"
 subtitle: "Data Science 1 with R (STAT 301-1)"
 author: "YOUR NAME"
+pagetitle: "L01 YOUR NAME"
+
 format:
   html:
     toc: true
+    toc-depth: 4
+    toc-location: left
     embed-resources: true
+    code-fold: false
     link-external-newwindow: true
 
 execute:
   warning: false
 
-from: markdown+emoji 
+from: markdown+emoji
+reference-location: margin
+citation-location: margin 
 ---
 
 ::: {.callout-tip icon=false}
@@ -43,10 +50,9 @@ You should always begin by loading all necessary packages towards the beginning 
 
 ```
 
-
 ## Datasets 
 
-This lab utilizes the `mpg` and `diamonds` datasets. Both come with `ggplot2` and their documentation/codebooks can be accessed with `?mpg` and `?diamonds`, provided you have installed and loaded `ggplot2` to your current R session. The case study utilizes `tinder_data.csv` located in your `data` folder. The following line of code reads in the data.
+This lab utilizes the `mpg` and `diamonds` datasets. Both come with `ggplot2` and their documentation/codebooks can be accessed with `?mpg` and `?diamonds`, provided you have installed and loaded `ggplot2` to your current R session. The case study utilizes `tinder_data.csv` located in your `data` folder. The following line of code reads in the tinder data.
 
 ```{r}
 #| label: load-data
@@ -64,7 +70,6 @@ There are 3 particularly important components to our template for building a gra
 
 * What is a **geom**?
 * What is an **aesthetic mapping**?
-
 
 ::: {.callout-tip icon="false"}
 ## Solution
@@ -84,13 +89,18 @@ YOUR SOLUTION HERE
 
 :::
 
-
-
 ### Exercise 3
 
-Construct a scatterplot of `hwy` versus `cty`. Set the color of the points to `drv`.
+Construct a scatterplot of `hwy` versus `cty` with the color of the points mapped to `drv`.
 
-Now construct a scatterplot of `hwy` versus `cty`. Set the color of the points to your favorite color (try typing `colors()` in the console) and `facet` by `drv`. Read `?facet_wrap` and adjust the `ncol` and `scales` as necessary.
+::: {.callout-tip icon="false"}
+## Solution
+
+YOUR SOLUTION HERE
+
+:::
+
+Now construct second scatterplot of `hwy` versus `cty`, but this time set the color of the points to your favorite color^[Try typing `colors()` in the console to get a list of named colors.] and `facet` by `drv`. Read `?facet_wrap` and adjust the `ncol` and `scales` as necessary.
 
 ::: {.callout-tip icon="false"}
 ## Solution
@@ -101,6 +111,7 @@ YOUR SOLUTION HERE
 
 What are the advantages to using faceting instead of the color aesthetic? What are the disadvantages? How might the balance change if you had a larger dataset?
 
+
 ::: {.callout-tip icon="false"}
 ## Solution
 
@@ -110,7 +121,7 @@ YOUR SOLUTION HERE
 
 ### Exercise 4
 
-Construct a scatterplot of `hwy` vs `cty`. Next, map a third numerical variable to `color`, then `size`, then `shape`. 
+Construct a scatterplot of `hwy` vs `cty` with a third numerical variable being mapped to `color`; then to `size`; then to `shape`. 
 
 ::: {.callout-tip icon="false"}
 ## Solution
@@ -119,7 +130,7 @@ YOUR SOLUTION HERE
 
 :::
 
-How do the aesthetics behave differently for categorical versus numerical variables? In other words, which variable types (numeric/categorical) are appropriate to match to which aesthetics (size/shape/color)?
+How do the aesthetics behave differently for categorical versus numerical variables? In other words, which variable types (numeric/categorical) are appropriate to match to which aesthetics (`size`/`shape`/`color`)?
 
 ::: {.callout-tip icon="false"}
 ## Solution
@@ -130,7 +141,7 @@ YOUR SOLUTION HERE
 
 ### Exercise 5
 
-Construct a histogram of the `carat` variable in the `diamonds` dataset. Adjust the `bins` to an appropriate value. Add a `title`, remove the axis label that says `count`, and add a `caption`: "Source: ggplot2 package".
+Construct a histogram of the `carat` variable in the `diamonds` dataset. Adjust the `bins` to an appropriate value, add a `title`, remove the axis label that says `count`, and add a `caption`: `"Source: ggplot2 package"`.
 
 ::: {.callout-tip icon="false"}
 ## Solution
@@ -152,8 +163,7 @@ YOUR SOLUTION HERE
 
 ### Exercise 7
 
-Construct a barplot of `cut`. Add in `aes(fill = carat > 0.7)`.
-
+Construct a barplot of `cut` and include `fill = carat > 0.7` as an aesthetic mapping. Describe what the mapping fill to `carat > 0.7` does.
 
 ::: {.callout-tip icon="false"}
 ## Solution
@@ -173,12 +183,11 @@ YOUR SOLUTION HERE
 
 :::
 
-
 ## Case Study
 
 Congratulations, you just landed your first job as a data analyst for Tinder! The dataset is stored in the `data` folder called `tinder_data`. A codebook, `tinder_data_codebook.csv`, provides a description of each of the variable names. This has been read in for you at the top of the document. We will learn more about importing data later in the quarter.
 
-**Your first assignment is to determine if there is a relationship between messages sent and messages received and how this differs based on user gender.** Your boss has asked for a one paragraph summary with graphics to support your conclusions. Your boss wants all graphics *saved* into a folder named "plots". Hint: `ggsave()`.
+**Your first assignment is to determine if there is a relationship between messages sent and messages received and how this differs based on user gender.** Your boss has asked for a one paragraph summary with graphics to support your conclusions. Your boss wants all graphics *saved* into a folder named `plots`. Hint: `ggsave()`.
 
 Since this is your first project as a data analyst you have been provided some tips and considerations for getting started:
 
@@ -198,7 +207,9 @@ YOUR SOLUTION HERE
 
 ## Graduate Challenge
 
-**Graduate students are required to complete this challenge. It is optional for undergraduate students.**
+::: callout-important
+Graduate students are required to complete this challenge. **It is optional for undergraduate students.**
+:::
 
 Recreate the following graphic:
 
