@@ -1,5 +1,5 @@
 ---
-title: "L01 Visualization"
+title: "L01 Data Visualization"
 subtitle: "Data Science 1 with R (STAT 301-1)"
 author: "YOUR NAME"
 pagetitle: "L01 YOUR NAME"
