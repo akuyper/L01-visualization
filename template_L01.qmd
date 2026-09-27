@@ -3,6 +3,7 @@ title: "L01 Data Visualization"
 subtitle: "Data Science 1 with R (STAT 301-1)"
 author: "YOUR NAME"
 pagetitle: "L01 YOUR NAME"
+date: today
 
 format:
   html:
@@ -52,13 +53,15 @@ You should always begin by loading all necessary packages towards the beginning 
 
 ## Datasets 
 
-This lab utilizes the `mpg` and `diamonds` datasets. Both come with `ggplot2` and their documentation/codebooks can be accessed with `?mpg` and `?diamonds`, provided you have installed and loaded `ggplot2` to your current R session. The case study utilizes `tinder_data.csv` located in your `data` folder. The following line of code reads in the tinder data.
+
+This lab utilizes the `mpg` and `diamonds` datasets. Both come with `ggplot2` and their documentation/codebooks can be accessed with `?mpg` and `?diamonds`, provided you have installed and loaded `ggplot2` to your current R session. The case study utilizes `tinder_data.csv` located in your `data` folder. The following lines of code read in tinder data and its codebook. We will learn more about reading in data in Chapter 7.   
 
 ```{r}
 #| label: load-data
 
 # read in data
 tinder_data <- read_csv("data/tinder_data.csv")
+tinder_data_codebook <- read_csv("data/tinder_data_codebook.csv")
 ```
 
 
@@ -185,6 +188,12 @@ YOUR SOLUTION HERE
 
 ## Case Study
 
+::: {.callout-note collapse=true}
+
+The case study portion for labs is different than the exercises portion. The core learning objective for them is to see if you can bring tools together and produce work meant for more general consumption. That is, can you bring everything together and answer a question clearly and concisely with supporting evidence.
+
+:::
+
 Congratulations, you just landed your first job as a data analyst for Tinder! The dataset is stored in the `data` folder called `tinder_data`. A codebook, `tinder_data_codebook.csv`, provides a description of each of the variable names. This has been read in for you at the top of the document. We will learn more about importing data later in the quarter.
 
 **Your first assignment is to determine if there is a relationship between messages sent and messages received and how this differs based on user gender.** Your boss has asked for a one paragraph summary with graphics to support your conclusions. Your boss wants all graphics *saved* into a folder named `plots`. Hint: `ggsave()`.
@@ -194,9 +203,15 @@ Since this is your first project as a data analyst you have been provided some t
  - When approaching a research question it is important to use univariate, bivariate, and multivariate analysis (depending on the problem) to get a better understanding of your data and also identify any potential problems.
  - How might the distribution of your variables impact your conclusions? Outliers? Weird values? Imbalanced classes?
  - How might `coord_fixed()` and `geom_abline()` improve a graphic?
- - Feel free to be creative! It is your job to answer this question and interpret conclusions in the most appropriate ways you see fit.
+ - Feel free to be creative! It is your job to answer this question and provide conclusions that you find reasonable given the information you have.
 
 This dataset was provided by [Swipestats.io](https://www.swipestats.io/).
+
+::: {.callout-warning}
+
+The final product is meant for your boss and needs to be presented as such. A well written paragraph and supporting graph(s). There should be no visible or accessible code --- your boss does not care about it. Your graphics should be polished (appropriate titles and such). 
+
+:::
 
 ::: {.callout-tip icon="false"}
 ## Solution
@@ -213,7 +228,7 @@ Graduate students are required to complete this challenge. **It is optional for 
 
 Recreate the following graphic:
 
-- alpha = 0.25
+- `alpha = 0.25`
 - theme is with Google Docs Chart from [ggthemes package](https://jrnold.github.io/ggthemes/reference/index.html).
 
 Why might your graph not match the example exactly? What could we do to ensure our graphs were identical?
